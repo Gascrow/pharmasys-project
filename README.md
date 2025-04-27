@@ -1,30 +1,91 @@
 # PharmaSys
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+PharmaSys adalah sistem manajemen apotek berbasis web yang dibangun menggunakan Laravel dan PostgreSQL. Sistem ini dirancang untuk membantu pengelolaan produk, transaksi penjualan, pembelian, laporan, serta manajemen pengguna di lingkungan apotek.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/gascrows-projects/v0-pharma-sys)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/A7SMHmYSDAa)
+## Fitur Utama
 
-## Overview
+- **Login & Role Management**  
+  Sistem mendukung login untuk Admin dan Kasir. Admin dapat mengakses seluruh fitur, sedangkan Kasir hanya fitur terkait penjualan.
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+- **Dashboard**  
+  Menampilkan ringkasan data penting, grafik statistik penjualan bulanan, dan informasi terkini.
 
-## Deployment
+- **Manajemen Kategori Produk**  
+  Tambah, edit, dan hapus kategori produk.
 
-Your project is live at:
+- **Manajemen Produk**  
+  Tambah, edit, hapus produk, serta monitoring stok, produk kadaluarsa, dan out-stock.
 
-**[https://vercel.com/gascrows-projects/v0-pharma-sys](https://vercel.com/gascrows-projects/v0-pharma-sys)**
+- **Pembelian (Purchase)**  
+  Proses pembelian produk dari supplier, update stok otomatis.
 
-## Build your app
+- **Penjualan (Sale) & Pembayaran**  
+  Proses transaksi penjualan, pembayaran, dan pencetakan struk.
 
-Continue building your app on:
+- **Supplier**  
+  Manajemen data supplier.
 
-**[https://v0.dev/chat/projects/A7SMHmYSDAa](https://v0.dev/chat/projects/A7SMHmYSDAa)**
+- **Laporan (Reports)**  
+  Laporan penjualan dan pembelian dalam bentuk tabel dan grafik.
 
-## How It Works
+- **Statistik Penjualan**  
+  Grafik penjualan bulanan pada dashboard.
 
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+- **Manajemen Pengguna & Hak Akses**  
+  Pengelolaan akun, role, dan permission pengguna.
+
+- **Profile & Settings**  
+  Update profil pengguna dan pengaturan sistem.
+
+> **Catatan:** Fitur backup saat ini dinonaktifkan.
+
+## Instalasi
+
+1. **Clone repository**
+   ```bash
+   git clone <repo-url>
+   cd PharmacyMS-Laravel-3
+   ```
+
+2. **Install dependencies**
+   ```bash
+   composer install
+   npm install && npm run dev
+   ```
+
+3. **Copy file environment**
+   ```bash
+   cp .env.example .env
+   ```
+
+4. **Konfigurasi database di file `.env`**
+   ```
+   DB_CONNECTION=pgsql
+   DB_HOST=127.0.0.1
+   DB_PORT=5432
+   DB_DATABASE=pharmasys_db
+   DB_USERNAME=postgres
+   DB_PASSWORD=postgres
+   ```
+
+5. **Generate key**
+   ```bash
+   php artisan key:generate
+   ```
+
+6. **Migrasi database**
+   ```bash
+   php artisan migrate
+   ```
+
+7. **Jalankan server**
+   ```bash
+   php artisan serve
+   ```
+
+8. **Akses aplikasi**
+   Buka browser ke [http://127.0.0.1:8000](http://127.0.0.1:8000)
+
+## Kontribusi
+
+Silakan buat issue atau pull request untuk perbaikan dan pengembangan fitur.
